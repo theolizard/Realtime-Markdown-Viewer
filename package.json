@@ -4,11 +4,11 @@
   "description": "Répertoire git pour le tp du cours git de la plateforme Elephorm",
   "main": "server.js",
   "scripts": {
-    "watchify": "./node_modules/watchify/bin/cmd.js -r ./converter/markdown.js:markdown -o public/bundle.js",
-    "browserify": "./node_modules/browserify/bin/cmd.js -r ./converter/markdown.js:markdown > public/bundle.js",
-    "nodemon": "./node_modules/nodemon/bin/nodemon.js",
+    "watchify": "node ./node_modules/watchify/bin/cmd.js -r ./converter/markdown.js:markdown -o public/bundle.js",
+    "browserify": "node ./node_modules/browserify/bin/cmd.js -r ./converter/markdown.js:markdown > public/bundle.js",
+    "nodemon": "node ./node_modules/nodemon/bin/nodemon.js",
     "dev": "npm run watchify & npm run nodemon",
-    "test": "./node_modules/mocha/bin/mocha converter/tests/markdown-test.js"
+    "test": "node ./node_modules/mocha/bin/mocha converter/tests/markdown-test.js"
   },
   "repository": {
     "type": "git",

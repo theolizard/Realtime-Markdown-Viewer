@@ -21,7 +21,15 @@ var parseBold = function(str) {
   var boldRegExp = /(\*\*)(.*?)\1/;
   var stra = [];
   while ((stra = boldRegExp.exec(str)) !== null) {
-    str = str.replace(stra[0], '<b>' + stra[2] + '</b>')
+    str = str.replace(stra[0], '<b>' + stra[2] + '</b>');
+  }
+  return str;
+}
+ var parseCodeBlock = function(str) {
+  var codeRegExp = /```(.*?)```/;
+  var stra = [];
+  while ((stra = codeRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '<code>' + stra[1] + '</code>');
   }
   return str;
  }
@@ -104,6 +112,7 @@ var markdown = {
     str = parseCode(str);
     str = parseBlockQuote(str);
     str = parseDel(str);
+    str = parseCodeBlock(str);
     return str;
   }
 };
